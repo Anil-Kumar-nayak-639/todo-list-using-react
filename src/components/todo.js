@@ -5,7 +5,7 @@ class TodoData extends React.Component {
 
     render() {
         return (
-            <div className='container'>
+            <div className='container' >
                 <h1 id='heading1'>TODO APP</h1>
                 <InputData />
             </div>

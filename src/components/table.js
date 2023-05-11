@@ -3,25 +3,36 @@ import Button from 'react-bootstrap/Button';
 import Table from 'react-bootstrap/Table';
 
 
-const TableData = ({ list }) => {
+const TableData = ({ list, setList }) => {
+
+    const deleteItem = (id) => {
+        const updatedData = list.filter((list, index) => {
+            return index !== id;
+        })
+        setList(updatedData)
+    }
+
+
 
     return (
         <>
 
-            <Table striped bordered hover>
-                <thead>
+            <Table striped bordered hover >
+
+                <thead >
                     <tr>
                         <th style={{ width: "15%" }}>Sl.No</th>
                         <th>TASK</th>
+
                     </tr>
                 </thead>
-                <tbody>
+                <tbody  >
                     {list.map((list, index) => {
                         return (
                             <tr>
                                 <td >{index + 1}</td>
                                 <td >{list}</td>
-                                <td><Button variant="success">Done</Button>{' '}</td>
+                                <td><Button onClick={() => deleteItem(index)} variant="danger">DELETE</Button></td>
                             </tr>
                         )
                     })}

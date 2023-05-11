@@ -7,14 +7,18 @@ import TableData from './table';
 const InputData = () => {
     const [data, setData] = React.useState('')
     const [list, setList] = React.useState([])
+    // const [todo, setTodo] = React.useState([])
 
     const submitData = () => {
         if (data) {
-
             setList([...list, data])
             setData('')
         }
     }
+    const deleteAll = () => {
+        setList([])
+    }
+
 
 
 
@@ -27,10 +31,11 @@ const InputData = () => {
                         placeholder="Write Something"
                         value={data}
                     />
-                    <Button variant="outline-secondary" id="button-addon2" onClick={submitData}>
+                    <Button variant="primary" id="button-addon2" onClick={submitData}>
                         Save
                     </Button>
-                    <TableData list={list} />
+                    <TableData list={list} setList={setList} />
+                    <Button variant="danger" id="delete-all" onClick={deleteAll}>DELETE ALL</Button>
 
                 </InputGroup>
             </div>

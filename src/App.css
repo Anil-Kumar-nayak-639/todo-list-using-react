@@ -50,6 +50,13 @@
   margin-top: 100px;
   text-align: center;
 }
-.completed{
-  color:red  
+#delete-all{
+  margin-left: auto;
+  margin-right: auto;
+}
+body{
+  background-color: #f0eef4;
+}
+.text{
+  color: whitesmoke;
 }

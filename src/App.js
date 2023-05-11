@@ -7,9 +7,9 @@ import TodoData from './components/todo';
 
 function App() {
   return (
-    <>
+    <div className='all'>
       <TodoData />
-    </>
+    </div>
   );
 }
 
