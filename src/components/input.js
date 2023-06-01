@@ -18,7 +18,10 @@ const InputData = () => {
     const deleteAll = () => {
         setList([])
     }
-
+    let button
+    if (list.length === 2) {
+        button = <Button variant="danger" id="delete-all" onClick={deleteAll}>DELETE ALL</Button>
+    }
 
 
 
@@ -35,7 +38,9 @@ const InputData = () => {
                         Save
                     </Button>
                     <TableData list={list} setList={setList} />
-                    <Button variant="danger" id="delete-all" onClick={deleteAll}>DELETE ALL</Button>
+                    {button}
+
+
 
                 </InputGroup>
             </div>
